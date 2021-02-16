@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+account = Account.create(name: "Store")
+account.update_column(:api_key, "ukpFgFgokfriqXjsEaArf7zsLVtFifBE")
+
+Article.create(name: "Remote control car", description: "Amazing remote control car", amount_cents: 120000)
+Article.create(name: "Barbie", description: "Barbie's vacations on the beach", amount_cents: 170000)
+Article.create(name: "Chess", description: "Gambito chess", amount_cents: 200000)
