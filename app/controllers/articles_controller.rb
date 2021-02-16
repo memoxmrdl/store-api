@@ -5,47 +5,57 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
 
-    render json: @articles
+    respond_to do |format|
+      format.json { render json: @articles }
+    end
   end
 
   # GET /articles/1
   def show
-    render json: @article
+    respond_to do |format|
+      format.json { render json: @article }
+    end
   end
 
   # POST /articles
   def create
     @article = Article.new(article_params)
 
-    if @article.save
-      render json: @article, status: :created, location: @article
-    else
-      render json: @article.errors, status: :unprocessable_entity
+    response = {}
+    response[:json] = @article
+    response[:status] = @article.save ? :created : :unprocessable_entity
+
+    respond_to do |format|
+      format.json { render response }
     end
   end
 
   # PATCH/PUT /articles/1
   def update
-    if @article.update(article_params)
-      render json: @article
-    else
-      render json: @article.errors, status: :unprocessable_entity
+    response = {}
+    response[:json] = @article
+    response[:status] = @article.update(article_params) ? :ok : :unprocessable_entity
+
+    respond_to do |format|
+      format.json { render response }
     end
   end
 
   # DELETE /articles/1
   def destroy
     @article.destroy
+
+    respond_to do |format|
+      format.json { head :not_content }
+    end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:name, :descripcion, :amount_cents)
+      params.permit(:name, :descripcion, :amount_cents)
     end
 end
