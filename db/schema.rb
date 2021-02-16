@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_02_16_185802) do
   create_table "articles", force: :cascade do |t|
     t.text "name"
     t.text "description"
-    t.bigint "amount_cents"
+    t.bigint "amount_cents", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
