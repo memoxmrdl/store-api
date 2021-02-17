@@ -1,24 +1,34 @@
-# README
+# Store API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## System requirements
 
-Things you may want to cover:
+- Ruby 2.6.5
+- Rails 6.1.2.1
 
-* Ruby version
+## Dependencies
 
-* System dependencies
+### Ruby
 
-* Configuration
+    bundle install
 
-* Database creation
+## Database
 
-* Database initialization
+To setup database you either run:
 
-* How to run the test suite
+    bin/rails db:setup
 
-* Services (job queues, cache servers, search engines, etc.)
+or
 
-* Deployment instructions
+    bin/rails db:drop db:create db:migrate db:seed
 
-* ...
+### Running migrations
+
+To run migrations use the following command:
+
+    bin/rails db:migrate
+
+## Test
+
+You should run the tests with the following command:
+
+    bin/rails test
