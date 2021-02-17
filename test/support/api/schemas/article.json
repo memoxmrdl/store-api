@@ -1,0 +1,20 @@
+{
+  "id": "file:/article.json#",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "description",
+    "amount_cents",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id":           { "type": "integer" },
+    "name":         { "type": "string" },
+    "description":  { "type": "string" },
+    "amount_cents": { "type": "integer" },
+    "created_at":   { "type": "string" },
+    "updated_at":   { "type": "string" }
+  }
+}

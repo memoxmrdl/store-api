@@ -2,10 +2,10 @@
 
 one:
   name: MyText
-  descripcion: MyText
-  amount_cents: 
+  description: MyText
+  amount_cents: 0
 
 two:
   name: MyText
-  descripcion: MyText
-  amount_cents: 
+  description: MyText
+  amount_cents: 0

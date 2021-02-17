@@ -1,6 +1,11 @@
 ENV['RAILS_ENV'] ||= 'test'
 require_relative "../config/environment"
 require "rails/test_help"
+require "json_matchers/minitest/assertions"
+
+JsonMatchers.schema_root = "test/support/api/schemas"
+
+Minitest::Test.include(JsonMatchers::Minitest::Assertions)
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers

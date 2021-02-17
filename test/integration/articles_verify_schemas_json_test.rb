@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ArticlesControllerTest < ActionDispatch::IntegrationTest
+class ArticlesVerifySchemasJsonTest < ActionDispatch::IntegrationTest
   def setup
     @account = accounts(:one)
     @article = articles(:one)
@@ -16,34 +16,30 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get articles_url, as: :json, headers: @headers
 
-    assert_response :success
+    assert_matches_json_schema response, "articles"
   end
 
   test "should create article" do
+    @params[:article][:description] = "Another description"
+    @params[:article][:name] = "Another name"
+
     assert_difference('Article.count') do
       post articles_url, params: @params, headers: @headers
     end
 
-    assert_response 201
-  end
-
-  test "should not create article" do
-    @params[:article][:name] = nil
-
-    post articles_url, params: @params, headers: @headers
-
-    assert_response :unprocessable_entity
+    assert_matches_json_schema response, "article"
   end
 
   test "should show article" do
     get article_url(@article), headers: @headers
-    assert_response :success
+
+    assert_matches_json_schema response, "article"
   end
 
   test "should update article" do
     patch article_url(@article), params: @params, headers: @headers
 
-    assert_response 200
+    assert_matches_json_schema response, "article"
   end
 
   test "should destroy article" do

@@ -1,0 +1,6 @@
+{
+  "type": "array",
+  "properties": {
+    "items": { "$ref": "file:/article.json#" }
+  }
+}

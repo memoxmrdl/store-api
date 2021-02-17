@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     respond_to do |format|
-      format.json { head :not_content }
+      format.json { head :no_content }
     end
   end
 
@@ -56,6 +56,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.permit(:name, :descripcion, :amount_cents)
+      params.require(:article).permit(:name, :description, :amount_cents)
     end
 end

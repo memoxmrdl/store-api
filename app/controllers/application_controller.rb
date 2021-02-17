@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     authenticate_or_request_with_http_token do |token, _|
       account = Account.find_by(api_key: token)
 
-      ActiveSupport::SecurityUtils.secure_compare(token, account&.api_key)
+      ActiveSupport::SecurityUtils.secure_compare(token, account&.api_key.to_s)
     end
   end
 end

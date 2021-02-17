@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  api_key: MyString
+  name: Creditar.io
+  api_key: QHW7gtnCcjoimp1VcGAyKDjnMB
   blocked: false
 
 two:
-  name: MyString
-  api_key: MyString
+  name: Arkus
+  api_key: ZVnub9oKprYWgzP8WnCjikFK5vnYhXJV
   blocked: false

@@ -72,6 +72,9 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
+    json_matchers (0.11.1)
+      json_schema
+    json_schema (0.20.9)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -151,6 +154,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
+  json_matchers
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
