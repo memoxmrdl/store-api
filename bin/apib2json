@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+./node_modules/apib2json/bin/apib2json "$@"
