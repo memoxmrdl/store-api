@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "5.2.1",
+    "aglio-patched": "^4.0.0",
+    "aglio-theme-olio": "https://github.com/mariochavez/aglio.git#olio-theme",
+    "apib2json": "https://github.com/mariochavez/apib2json.git#additional-metadata"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.2"
+  },
+  "resolutions": {
+    "protagonist": "^2.2.1"
+  },
+  "engines": {
+    "node": "^14"
+  }
+}
